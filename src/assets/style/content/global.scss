@@ -248,11 +248,7 @@
 
 .es-netflix.es-enabled {
   #es {
-    bottom: 21vh;
-
-    @media screen and (min-width: 1440px) {
-      bottom: 26vh;
-    }
+    bottom: 130px;
   }
 
   .player-timedtext {
