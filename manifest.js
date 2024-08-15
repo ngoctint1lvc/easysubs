@@ -46,7 +46,7 @@ const manifest = {
       css: ["assets/css/contentStyle<KEY>.chunk.css"],
     },
   ],
-  permissions: ["scripting", "storage", "tts", "activeTab"],
+  permissions: ["scripting", "storage", "activeTab"],
   optional_host_permissions: ["*://*/*"],
   optional_permissions: [],
   host_permissions: ["https://translate.google.com/*", "http://localhost:8765/*", "https://api.lingualeo.com/*"],
@@ -59,6 +59,11 @@ const manifest = {
       matches: ["*://*/*"],
     },
   ],
+  browser_specific_settings: {
+    gecko: {
+      id: "{4077aa9d-b753-4913-8e52-27ef408d4c82}",
+    },
+  },
 };
 
 export default manifest;
