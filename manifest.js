@@ -49,7 +49,7 @@ const manifest = {
   permissions: ["scripting", "storage", "activeTab"],
   optional_host_permissions: ["*://*/*"],
   optional_permissions: [],
-  host_permissions: ["https://translate.google.com/*", "http://localhost:8765/*", "https://api.lingualeo.com/*"],
+  host_permissions: ["https://translate.google.com/*", "http://localhost:8765/*", "https://api.lingualeo.com/*", "https://translate.googleapis.com/*"],
   content_security_policy: {
     extension_pages: "script-src 'self'; object-src 'self'",
   },

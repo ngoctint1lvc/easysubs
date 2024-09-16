@@ -14,7 +14,8 @@ class GoogleTranslateSingleFetcher {
   #baseUrl: string;
 
   constructor() {
-    this.#baseUrl = "https://translate.google.com/translate_a/single?client=at&dt=t&dt=rm&dj=1";
+    // https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&hl=en-US&dt=t&dt=bd&dt=rm&dj=1&source=bubble&tk=831123.831123&q=query
+    this.#baseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&&dt=t&dt=bd&dt=rm&dj=1&source=bubble";
   }
 
   async getFullTextTranslation({ text, lang }: TRequest): Promise<string> {
