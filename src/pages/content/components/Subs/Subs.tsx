@@ -84,7 +84,7 @@ const Sub: FC<{ sub: TSub }> = ({ sub }) => {
 
   const handleOnClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    setShowTranslation(true);
+    setShowTranslation(!showTranslation); // allow toggle by click
   };
 
   if (findPhrasalVerbsPendings[sub.text]) {
