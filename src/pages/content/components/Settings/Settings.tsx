@@ -1,4 +1,4 @@
-import { FC, useState, PropsWithChildren } from "react";
+import {FC, useState, PropsWithChildren, useEffect} from "react";
 import { createPortal } from "react-dom";
 
 import { $streaming } from "@src/models/streamings";
@@ -12,6 +12,12 @@ type TSettingsProps = {
   contentContainer: HTMLElement;
 };
 
+const Toast = () => {
+  return <div className="es-toast">
+    <Toaster/>
+  </div>
+}
+
 export const Settings: FC<TSettingsProps> = () => {
   const [showSettings, setShowSettings] = useState(false);
   const streaming = useUnit($streaming);
@@ -20,6 +26,10 @@ export const Settings: FC<TSettingsProps> = () => {
     e.stopPropagation();
     setShowSettings(!showSettings);
   };
+  let removeESToast = () => {
+    document.querySelector("body > .es-toast")?.remove();
+    return false;
+  }
   return (
     <>
       <div className="es-settings-icon" onClick={handleClick}>
@@ -30,10 +40,8 @@ export const Settings: FC<TSettingsProps> = () => {
           <SettingsContent onClose={() => setShowSettings(false)} />,
           streaming.getSettingsContentContainer(),
         )}
-      {createPortal(
-        <div className="es-toast">
-          <Toaster />
-        </div>,
+      {removeESToast() || createPortal(
+        <Toast />,
         document.querySelector("body"),
       )}
     </>
